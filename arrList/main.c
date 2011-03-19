@@ -1,3 +1,4 @@
+// Courtesy of David Ćavar
 #include "arrayList.h"
 #include "includes.h"
 int main(void){
