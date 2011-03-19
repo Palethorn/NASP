@@ -1,4 +1,4 @@
-// Courtesy of David Ćavar
+// Courtesy of David Ćavar aka Palethorn
 #include "arrayList.h"
 #include "includes.h"
 int main(void){
