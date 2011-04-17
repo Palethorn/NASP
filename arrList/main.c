@@ -7,7 +7,8 @@ int main(void){
 	for(i = 0; i < 5; i++){
 		if(!insert(&list,i,0,&size)) break;
 	}
-	rm(&list,3,&size);
+	//rm(&list,3,&size);
+	printf("%d\n", find(list, 2, size));	
 	print(list,size);
 	return 0;
 }

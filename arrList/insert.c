@@ -8,9 +8,9 @@ int insert(int **list,int element, int position, int *size){
 	}
 	*size = *size + 1;
 	for(i = *size - 1; i != position && i > 0; i--){
-		temp[i] = temp[i - 1];
+		*(temp + i) = *(temp + (i - 1));
 	}
-	temp[position] = element;
+	*(temp + position) = element;
 	*list = temp;
 	return 1;
 }
