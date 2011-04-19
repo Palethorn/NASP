@@ -1,3 +1,3 @@
 TODO
-removeChildById and removeChildByValue inside respective source are to be implemented
+removeChildById and removeChildByValue inside their respective source files are to be implemented
 Not possible to make a library to include general usage cases for this data structure. Await for binary tree.
