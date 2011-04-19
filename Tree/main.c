@@ -3,6 +3,7 @@
 #include "additional.h"
 int main(){
 	node elements[5];
+	node *result;
 	elements[0].id = 1;
 	elements[0].value = 1;
 	elements[0].nextSibling = NULL;
@@ -28,7 +29,7 @@ int main(){
 	elements[4].nextSibling = NULL;
 	elements[4].firstChild = NULL;
 	
-	printf("Printing in inorder:");
+	/*printf("Printing in inorder:");
 	printInOrder(elements);
 	printf("\n");
 	printf("Printing in postorder:");
@@ -36,7 +37,12 @@ int main(){
 	printf("\n");
 	printf("Printing in preorder:");
 	printPreOrder(elements);
-	printf("\n");
+	printf("\n");*/
+	
+	result = findParentByChildId(elements,5);
+	if(result){
+		printf("%d\n", result -> value);
+	}
 
 return 0;
 }
