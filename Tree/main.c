@@ -38,8 +38,8 @@ int main(){
 	printf("Printing in preorder:");
 	printPreOrder(elements);
 	printf("\n");*/
-	
-	result = findParentByChildId(elements,5);
+	addChildByParentId(elements, 5, 6, 6);
+	result = findElementById(elements,6);
 	if(result){
 		printf("%d\n", result -> value);
 	}
