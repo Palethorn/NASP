@@ -17,6 +17,6 @@
 			node* findMin(node *subtree);
 			node* findMax(node *subtree);
 			void printNodes(node *subtree);
-			node *findNode(node *subtree, int value);
+			node* findNode(node *subtree, int value);
 	};
 #endif

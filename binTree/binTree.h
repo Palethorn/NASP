@@ -15,7 +15,7 @@ class binTree{
 			int addElement(int value);
 			int removeElement(int value);
 			void printTree();
-			node * findElement(int value);
+			node* findElement(int value);
 			//void balance();
 			//void checkBalance();
 	};

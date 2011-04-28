@@ -1,4 +1,4 @@
 #include "binTree.h"
 void binTree::printTree(){
-	root -> printNodes(this -> root);
+	this -> root -> printNodes(this -> root);
 }

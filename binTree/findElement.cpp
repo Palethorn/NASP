@@ -1,3 +1,5 @@
+#include "node.h"
+#include "binTree.h"
 node* binTree::findElement(int value){
-	return findNode(root, value);
+	return root->findNode(root, value);
 }
