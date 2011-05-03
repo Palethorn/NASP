@@ -1,3 +1,5 @@
+#include "additional.h"
+#include "definition.h"
 void rmRecursive(node *subdir){
 	node* temp = NULL;
 	if(!subdir) return;

@@ -1,21 +1,23 @@
+#include "additional.h"
 #include "definition.h"
-#include <malloc.h>
-#include "header.h"
 int mkdir(node** current, char* name){
 	node* new = NULL;
 	node* tmp = *current;
 	new = (node *)malloc(sizeof(node));
-	if(!current){
+	if(!(*current)){
 		strcpy( new -> name, name);
 		new -> nextSibling = NULL;
 		new -> firstChild = NULL;
 		new -> parent = NULL;
+		new -> previousSibling = NULL;
 		*current = new;
 		return 1;
 	}
 	strcpy( new -> name, name);
-	new -> nextSibling = current -> firstChild;
-	new -> parent = current;
-	current -> firstChild = new;
+	(*current) -> previousSibling = new;
+	new -> nextSibling = (*current) -> firstChild;
+	new -> parent = *current;
+	new -> previousSibling = NULL;
+	(*current) -> firstChild = new;
 	return 1;
 }

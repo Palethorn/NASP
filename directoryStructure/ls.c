@@ -3,7 +3,6 @@
 void ls(node *subdir){
 	if(!subdir)
 		return;
-	puts(subdir -> name);
+	printf("%s ",  subdir -> name);
 	ls(subdir -> nextSibling);
-	
 }
