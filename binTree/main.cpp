@@ -1,11 +1,12 @@
-#include "binTree.h"
+#include "header.h"
 int main(){
-	binTree *tree = new binTree(12);
-	tree -> addElement(48);
-	tree -> addElement(16);
-	tree -> addElement(-12);
-	tree -> addElement(5);
-	tree -> removeElement(12);
-	tree -> printTree();
+	node *tree = NULL;
+	addChild(&tree, 12);
+	addChild(&tree, 48);
+	addChild(&tree, 16);
+	addChild(&tree, -12);
+	addChild(&tree, 5);
+	//removeChild(&tree, 12);
+	printNodes(tree);
 	return 0;
 }
