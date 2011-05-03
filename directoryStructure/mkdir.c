@@ -1,6 +1,6 @@
 #include "additional.h"
 #include "definition.h"
-int mkdir(node** current, char* name){
+int mkdir(node** current, char name[]){
 	node* new = NULL;
 	node* tmp = *current;
 	new = (node *)malloc(sizeof(node));
@@ -14,7 +14,6 @@ int mkdir(node** current, char* name){
 		return 1;
 	}
 	strcpy( new -> name, name);
-	(*current) -> previousSibling = new;
 	new -> nextSibling = (*current) -> firstChild;
 	new -> parent = *current;
 	new -> previousSibling = NULL;
