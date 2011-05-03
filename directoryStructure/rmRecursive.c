@@ -1,4 +1,4 @@
-void rmRecursive(node subdir){
+void rmRecursive(node *subdir){
 	node* temp = NULL;
 	if(!subdir) return;
 	rm(subdir -> nextSibling);
