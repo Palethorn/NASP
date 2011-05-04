@@ -9,7 +9,6 @@ int rm(node **current, char name[]){
 		if(temp -> firstChild){
 			free(temp -> firstChild);
 			temp -> firstChild = NULL;
-			return 1;
 		}
 		if(temp -> previousSibling){
 			temp -> nextSibling -> previousSibling = temp -> previousSibling;

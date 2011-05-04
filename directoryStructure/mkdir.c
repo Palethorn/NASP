@@ -5,7 +5,7 @@ int mkdir(node** current, char name[]){
 	node* tmp = *current;
 	new = (node *)malloc(sizeof(node));
 	if(!(*current)){
-		strcpy( new -> name, name);
+		strcpy(new -> name, name);
 		new -> nextSibling = NULL;
 		new -> firstChild = NULL;
 		new -> parent = NULL;
