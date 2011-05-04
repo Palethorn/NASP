@@ -10,13 +10,15 @@ int mkdir(node** current, char name[]){
 		new -> firstChild = NULL;
 		new -> parent = NULL;
 		new -> previousSibling = NULL;
-		*current = new;
+		tmp = new;
 		return 1;
 	}
-	strcpy( new -> name, name);
-	new -> nextSibling = (*current) -> firstChild;
-	new -> parent = *current;
+	strcpy(new -> name, name);
+	new -> nextSibling = tmp -> firstChild;
+	if(new -> nextSibling)
+		new -> nextSibling -> previousSibling = new;
+	new -> parent = tmp;
 	new -> previousSibling = NULL;
-	(*current) -> firstChild = new;
+	tmp -> firstChild = new;
 	return 1;
 }
