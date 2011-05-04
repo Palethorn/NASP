@@ -5,6 +5,6 @@
 	node* findNode(node *subdir,char name[]);
 	void ls(node *subdir);
 	int mkdir(node** current, char name[]);
-	void rm(node **current, char name[]);
-	void rmRecursive(node **subdir);
+	int rm(node **current, char name[]);
+	void rmRecursive(node *subdir);
 #endif

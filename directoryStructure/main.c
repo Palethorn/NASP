@@ -3,7 +3,8 @@
 #include "additional.h"
 int main(){
 	node *fs = NULL;
-	node *current = NULL;
+	node* current = NULL;
+	node *temp = NULL;
 	int choice = 1;
 	char name[20];
 	fs = (node *)malloc(sizeof(node));
@@ -20,6 +21,7 @@ int main(){
 			"2. Change directory\n"
 			"3. Create directory\n"
 			"4. Remove directory\n"
+			"5. Find directory\n"
 			"> "
 		);
 		scanf("%d",&choice);
@@ -44,6 +46,13 @@ int main(){
 				printf("Enter directory name: ");
 				scanf("%s", name);
 				rm(&current, name);
+				break;
+			case 5:
+				printf("Enter directory name: ");
+				scanf("%s", name);
+				if(temp = findNode(current -> firstChild, name))
+					printf("%s\n", temp -> name);
+				break;
 			default:
 				choice = 1;
 				break;
