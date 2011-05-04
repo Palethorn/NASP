@@ -15,6 +15,8 @@ int mkdir(node** current, char name[]){
 	}
 	strcpy( new -> name, name);
 	new -> nextSibling = (*current) -> firstChild;
+	/*if((*current) -> firstChild)
+		(*current) -> firstChild -> previousSibling = new;*/
 	new -> parent = *current;
 	new -> previousSibling = NULL;
 	(*current) -> firstChild = new;
