@@ -2,7 +2,6 @@
 #include "definition.h"
 int mkdir(node** current, char name[]){
 	node* new = NULL;
-	node* tmp = *current;
 	new = (node *)malloc(sizeof(node));
 	if(!(*current)){
 		strcpy(new -> name, name);
@@ -15,10 +14,10 @@ int mkdir(node** current, char name[]){
 	}
 	strcpy( new -> name, name);
 	new -> nextSibling = (*current) -> firstChild;
-	/*if((*current) -> firstChild)
-		(*current) -> firstChild -> previousSibling = new;*/
 	new -> parent = *current;
 	new -> previousSibling = NULL;
+	if(new -> nextSibling)
+		new -> nextSibling -> previousSibling = new;
 	(*current) -> firstChild = new;
 	return 1;
 }
