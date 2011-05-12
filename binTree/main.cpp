@@ -6,7 +6,7 @@ int main(){
 	addChild(&tree, 16);
 	addChild(&tree, -12);
 	addChild(&tree, 5);
-	//removeChild(&tree, 12);
+	removeChild(&tree, 12);
 	printNodes(tree);
 	return 0;
 }
