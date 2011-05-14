@@ -11,4 +11,5 @@
 	node* singleRotateLeft(node* subtree);
 	node* singleRotateRight(node* subtree);
 	int checkBalance(node* subtree);
+	node *performRotation(node* subtree, int rotation);
 #endif
