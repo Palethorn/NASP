@@ -13,10 +13,10 @@ int addChild(node **tree, int value){
 		n -> lh = n -> rh = 0;
 		n -> balanceFactor = 0;
 		*tree = n;
-		return 0;
+		return 1;
 	}
-	if(value < subtree -> value){//Dosli smo do mjesta gdje je moguce ubaciti element
-		if(subtree -> left == NULL){
+	if(value < subtree -> value){
+		if(subtree -> left == NULL){//Dosli smo do mjesta gdje je moguce ubaciti element
 			node *n = (node *)malloc(sizeof(node));
 			n -> value = value;
 			n -> left = NULL;
@@ -29,12 +29,15 @@ int addChild(node **tree, int value){
 			return 1;
 		}
 		else{//Ulaz u rekurziju ako element ima lijevo dijete. Provjera balans faktora te balansiranje stabla u povratku.
-			subtree -> lh += addChild(&subtree -> left, value);
+			subtree -> lh = addChild(&subtree -> left, value) + 1;
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
 			result = checkBalance(subtree);
 			if(result){// Ako je potebna rotacija
-				subtree = performRotation(subtree, result);
+				printf("Rotacija: %d\n", result);
+                                printf("value: %d, balance factor: %d\n", subtree -> value, subtree -> balanceFactor);
+				*tree = performRotation(subtree, result);
 			}
+			return subtree -> lh >= subtree -> rh ? subtree -> lh : subtree -> rh;
 		}
 	}
 	else if(value > subtree -> value){
@@ -50,14 +53,18 @@ int addChild(node **tree, int value){
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
 			return 1;
 		}
-		else{//Ulaz u rekurziju ako element ima lijevo dijete. Provjera balans faktora te balansiranje stabla.
-			subtree -> rh += addChild(&subtree -> left, value);
+		else{//Ulaz u rekurziju ako element ima desno dijete. Provjera balans faktora te balansiranje stabla.
+			subtree -> rh = addChild(&subtree -> right, value) + 1;
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
 			result = checkBalance(subtree);
-			if(result){// Ako je potebna rotacija
-				subtree = performRotation(subtree, result);
+			if(result){// Ako je potrebna rotacija
+				printf("Rotacija: %d\n", result);
+                                printf("value: %d, balance factor: %d\n", subtree -> value, subtree -> balanceFactor);
+				*tree = performRotation(subtree, result);
 			}
+			return subtree -> lh >= subtree -> rh ? subtree -> lh : subtree -> rh;
 		}
 	}
+	//Never, never, neverland
 	return 0;
 }

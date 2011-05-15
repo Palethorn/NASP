@@ -7,10 +7,10 @@ node* findNode(node *subtree, int value, int *hops){
 	if(subtree -> value == value) return subtree;//Ako je element pronadjen.
 	if(subtree -> value < value){
 		hops++;
-		return findNode(subtree -> right, value);//Idi desno rekurzivnim pozivom.
+		return findNode(subtree -> right, value, hops);//Idi desno rekurzivnim pozivom.
 	}
 	if(subtree -> value > value){
 		hops++;
-		return findNode(subtree -> left, value);//Idi lijevo rekurzivnim pozivom.
+		return findNode(subtree -> left, value, hops);//Idi lijevo rekurzivnim pozivom.
 	}
 }

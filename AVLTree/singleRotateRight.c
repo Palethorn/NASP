@@ -3,17 +3,15 @@
 */
 #include "header.h"
 node* singleRotateRight(node* subtree){
-	node *tmp = subtree -> left;
-	subtree -> left = tmp -> right;
+	node *tmp = NULL;
+        short tmprh;
+        tmp = subtree -> left;
+        tmprh = tmp -> rh;
+        subtree -> left = tmp -> right;
+        subtree -> lh = tmprh;
 	tmp -> right = subtree;
-	tmp -> right -> lh =
-		tmp -> right -> left -> lh >= tmp -> right -> left -> rh ?
-			(tmp -> right -> left -> lh + 1) :
-				(tmp -> right -> left -> rh + 1);
-	tmp -> rh =
-		tmp -> right -> lh >= tmp -> right -> rh ?
-			(tmp -> right -> lh + 1) :
-				(tmp -> right -> rh + 1);
-	tmp -> balanceFactor = tmp -> lh - tmp -> rh;
+        tmp -> rh = tmp -> right -> lh >= tmp -> right -> rh ? tmp -> right -> lh + 1 : tmp -> right -> rh + 1;
+        tmp -> balanceFactor = tmp -> lh - tmp -> rh;
+        tmp -> right -> balanceFactor = tmp -> right -> lh - tmp -> right -> rh;
 	return tmp;
 }

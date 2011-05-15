@@ -3,9 +3,9 @@
 */
 #include "header.h"
 node* doubleRotateRightLeft(node* subtree){
-	node* tmp = NULL;
-	tmp = singleRotateRight(subtree -> right);
-	subtree -> right = tmp;
-	tmp = singleRotateLeft(subtree);
-	return tmp;
+	printf("Single right rotate...\n");
+	subtree -> right = singleRotateRight(subtree -> right);
+	printf("Single left rotate...\n");
+	subtree = singleRotateLeft(subtree);
+	return subtree;
 }
