@@ -6,11 +6,11 @@
 node *performRotation(node* subtree, int rotation){
 	switch(rotation){
 		case 1:
-			return singleRotateLeft(subtree);
+			return singleRotateRight(subtree);
 		case 2:
 			return doubleRotateLeftRight(subtree);
 		case 3:
-			return singleRotateRight(subtree);
+			return singleRotateLeft(subtree);
 		case 4:
 			return doubleRotateRightLeft(subtree);
 	}
