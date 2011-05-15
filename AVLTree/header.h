@@ -1,3 +1,6 @@
+/*
+* Deklaracije funkcija
+*/
 #ifndef HEADER_H
 #define HEADER_H
 	#include "node.h"

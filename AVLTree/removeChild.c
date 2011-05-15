@@ -1,3 +1,6 @@
+/*
+* Funkcija uklanja element iz stabla cija pripadajuca vrijednost odgovara trazenoj.
+*/
 #include "header.h"
 int removeChild(node **subtree, int value){
 	node *tmp = *subtree;

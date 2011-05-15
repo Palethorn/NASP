@@ -1,3 +1,7 @@
+/*
+* Funkcija s obzirom na vracnenu akciju funkcije checkBalance.c poziva odgovarajucu opciju funkciju za balansiranje.
+* Vrijednosti akcija su objasnjene u checkBalance.c. Stvarna rotacija se obavlja u odgovarajucim funkcijama.
+*/
 node *performRotation(node* subtree, int rotation){
 	switch(rotation){
 		case 1:

@@ -1,3 +1,6 @@
+/*
+* Funkcija ispisuje sve elemente stabla u in-order nacinu.
+*/
 #include "header.h"
 void printNodes(node *subtree){
 	if(subtree == NULL) return;

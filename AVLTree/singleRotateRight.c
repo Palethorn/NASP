@@ -1,3 +1,6 @@
+/*
+* Funkcija obavlja jednostruku rotaciju u desno te vraca adresu novog root elementa podstabla.
+*/
 #include "header.h"
 node* singleRotateRight(node* subtree){
 	node *tmp = subtree -> left;
