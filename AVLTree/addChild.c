@@ -4,6 +4,7 @@
 #include "header.h"
 int addChild(node **tree, int value){
 	node* subtree = *tree;
+	int result;
 	if(!subtree){//Ako je stablo prazno
 		node *n = (node *)malloc(sizeof(node));
 		n -> value = value;
@@ -27,9 +28,13 @@ int addChild(node **tree, int value){
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
 			return 1;
 		}
-		else{//Ulaz u rekurziju ako element ima lijevo dijete. Provjera balans faktora te balansiranje stabla.
+		else{//Ulaz u rekurziju ako element ima lijevo dijete. Provjera balans faktora te balansiranje stabla u povratku.
 			subtree -> lh += addChild(&subtree -> left, value);
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
+			result = checkBalance(subtree);
+			if(result){
+				subtree = performRotation(subtree, result);
+			}
 		}
 	}
 	else if(value > subtree -> value){
@@ -48,6 +53,10 @@ int addChild(node **tree, int value){
 		else{//Ulaz u rekurziju ako element ima lijevo dijete. Provjera balans faktora te balansiranje stabla.
 			subtree -> rh += addChild(&subtree -> left, value);
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
+			result = checkBalance(subtree);
+			if(result){
+				subtree = performRotation(subtree, result);
+			}
 		}
 	}
 	return 0;

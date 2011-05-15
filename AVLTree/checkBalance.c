@@ -1,6 +1,7 @@
 /*
 * Provjera da li je potrebno balansirati stablo. Ako jeste detektiraj slucaj narusavanja balansiranosti i odaberi akciju.
 */
+#include "header.h"
 int checkBalance(node* subtree){
 	if(subtree -> balanceFactor >= 2 && subtree -> left > 0){//Ako je potrebna desna rotacija.
 		return 1;
