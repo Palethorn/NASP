@@ -32,7 +32,7 @@ int addChild(node **tree, int value){
 			subtree -> lh += addChild(&subtree -> left, value);
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
 			result = checkBalance(subtree);
-			if(result){
+			if(result){// Ako je potebna rotacija
 				subtree = performRotation(subtree, result);
 			}
 		}
@@ -54,7 +54,7 @@ int addChild(node **tree, int value){
 			subtree -> rh += addChild(&subtree -> left, value);
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
 			result = checkBalance(subtree);
-			if(result){
+			if(result){// Ako je potebna rotacija
 				subtree = performRotation(subtree, result);
 			}
 		}
