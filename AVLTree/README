@@ -1,0 +1,11 @@
+Implementation of Adelson-Velskii & Landis tree aka AVL Tree. It's a type of a binary tree which does self balancing for every new insertion.
+Self balancing keeps the search complexity, for which is used, O(logn) since it should ideally have logn depth to reduce the workload.
+It's written in a way that its autobalance should have very little impact.
+Since it doesn't have makefile yet you can compile it simply with
+gcc -c *.c
+gcc -o executableName *.o
+or use it in an IDE.
+TODO
+Add makefile
+Translate comments into English
+Add self balancing while deleting elements
