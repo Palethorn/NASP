@@ -29,7 +29,7 @@ int addChild(node **tree, int value){
 			return 1;
 		}
 		else{//Ulaz u rekurziju ako element ima lijevo dijete. Provjera balans faktora te balansiranje stabla u povratku.
-			subtree -> lh = addChild(&subtree -> left, value) + 1;
+			subtree -> lh = addChild(&(subtree -> left), value) + 1;
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
 			result = checkBalance(subtree);
 			if(result){// Ako je potebna rotacija
@@ -37,7 +37,7 @@ int addChild(node **tree, int value){
                                 printf("value: %d, balance factor: %d\n", subtree -> value, subtree -> balanceFactor);
 				*tree = performRotation(subtree, result);
 			}
-			return subtree -> lh >= subtree -> rh ? subtree -> lh : subtree -> rh;
+			return (*tree) -> lh >= (*tree) -> rh ? (*tree) -> lh : (*tree) -> rh;
 		}
 	}
 	else if(value > subtree -> value){
@@ -54,7 +54,7 @@ int addChild(node **tree, int value){
 			return 1;
 		}
 		else{//Ulaz u rekurziju ako element ima desno dijete. Provjera balans faktora te balansiranje stabla.
-			subtree -> rh = addChild(&subtree -> right, value) + 1;
+			subtree -> rh = addChild(&(subtree -> right), value) + 1;
 			subtree -> balanceFactor = subtree -> lh - subtree -> rh;
 			result = checkBalance(subtree);
 			if(result){// Ako je potrebna rotacija
@@ -62,7 +62,7 @@ int addChild(node **tree, int value){
                                 printf("value: %d, balance factor: %d\n", subtree -> value, subtree -> balanceFactor);
 				*tree = performRotation(subtree, result);
 			}
-			return subtree -> lh >= subtree -> rh ? subtree -> lh : subtree -> rh;
+			return (*tree) -> lh >= (*tree) -> rh ? (*tree) -> lh : (*tree) -> rh;
 		}
 	}
 	//Never, never, neverland

@@ -1,18 +1,12 @@
 #include "header.h"
+#define SIZE 16
 int main(){
-	node *tree = NULL;
+	node* tree = NULL;
 	node* element = NULL;
-	int hops = 0;
-	addChild(&tree, 3);
-	addChild(&tree, 2);
-	addChild(&tree, 1);
-	addChild(&tree, 4);
-	addChild(&tree, 5);
-	addChild(&tree, 6);
-	addChild(&tree, 7);
-	//removeChild(&tree, 12);
-	element = findNode(tree,4,&hops);
-	printf("value: %d, balance factor: %d, left height: %d, right height: %d, hops: %d\n",element -> value, element -> balanceFactor, element -> lh, element -> rh, hops);
-	//printNodes(tree);
+	int i = 0, elements[] = {3,2,1,4,5,6,7,16,15,14,13,12,11,10,8,9};
+	for(i = 0; i < SIZE; i++){
+		addChild(&tree,elements[i]);
+	}
+	printNodes(tree);
 	return 0;
 }
