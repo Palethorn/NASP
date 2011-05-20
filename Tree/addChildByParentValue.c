@@ -1,7 +1,7 @@
 #include "definition.h"
 #include <malloc.h>
 #include "header.h"
-int addChildByParentId(node *tree, int parentValue, int newValue, int newId){
+int addChildByParentValue(node *tree, int parentValue, int newValue, int newId){
 	node *parent = NULL, *new = NULL;
 	new = (node *)malloc(sizeof(node));
 	parent = findElementByValue(tree, parentValue);

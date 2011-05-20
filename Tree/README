@@ -1,3 +1,7 @@
+Not possible to make a library to include general usage cases for this data structure. Await for binary tree.
+Added configure script for automatic makefile creating. To compile just call
+./configure
+make
+and use as you wish
 TODO
 removeChildById and removeChildByValue inside their respective source files are to be implemented
-Not possible to make a library to include general usage cases for this data structure. Await for binary tree.

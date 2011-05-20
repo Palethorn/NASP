@@ -1,0 +1,16 @@
+#!/bin/bash
+touch makefile
+PARAMETERS="CC=gcc
+CFLAGS=-Wall -c"
+contents=""
+targetObjects=""
+echo "${PARAMETERS}" > makefile
+for source in *.c
+do
+	target=${source%\.*}
+	contents="${contents}${target}: ${source}\n\t\${CC} \${CFLAGS} ${source}\n"
+	targetObjects=${targetObjects}" "${target}".o"
+done
+echo -e "all: ${targetObjects}\n\t\${CC} -o main ${targetObjects}" >> makefile
+echo -e ${contents} >> makefile
+echo -e "clean:\n\trm *.o main" >> makefile
