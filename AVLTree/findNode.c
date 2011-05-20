@@ -13,4 +13,6 @@ node* findNode(node *subtree, int value, int *hops){
 		(*hops)++;// Incrementing a value that shows how many times we had to go into recursion
 		return findNode(subtree -> left, value, hops);// Go left recursively
 	}
+	//Never, never, neverland
+	return NULL;
 }
