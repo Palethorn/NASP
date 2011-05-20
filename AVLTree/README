@@ -7,5 +7,4 @@ gcc -o executableName *.o
 or use it in an IDE.
 TODO
 Add makefile
-Translate comments into English
 Add self balancing while deleting elements
