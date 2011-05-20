@@ -1,7 +1,6 @@
 #include "header.h"
 /*
-* Funkcija s obzirom na vracenu akciju funkcije checkBalance.c poziva odgovarajucu opciju funkciju za balansiranje.
-* Vrijednosti akcija su objasnjene u checkBalance.c. Stvarna rotacija se obavlja u odgovarajucim funkcijama.
+* Calling individual function for rotation based on the result of checkBalance() function.
 */
 node* performRotation(node* subtree, int rotation){
 	switch(rotation){

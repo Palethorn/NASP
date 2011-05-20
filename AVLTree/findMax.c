@@ -1,11 +1,14 @@
 /*
-* Funkcija pronalazi element sa najvecom vrijednosti u stablu.
+* Finds node with max value
 */
 #include "header.h"
 node* findMax(node *subtree){
 	if(subtree == NULL) return NULL;
-	if(subtree -> right == NULL){//No further.
+	if(subtree -> right == NULL){// No further.
 		return subtree;
 	}
-	return findMax(subtree -> right);//Trazimo element sa najvecom vrijednoscu pa idemo u krajnju desnu stranu stabla.
+	/*
+	* Going recursively to the rightmost node of the tree, because that one represents the max value
+	*/
+	return findMax(subtree -> right);
 }

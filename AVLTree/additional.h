@@ -1,5 +1,5 @@
 /*
-* Ukljucivanje potrebnih bibloteka
+* Including needed libraries
 */
 #ifndef ADDITIONAL_H
 #define ADDITIONAL_H

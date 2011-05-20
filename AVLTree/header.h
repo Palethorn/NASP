@@ -1,5 +1,5 @@
 /*
-* Deklaracije funkcija
+* Function declarations
 */
 #ifndef HEADER_H
 #define HEADER_H

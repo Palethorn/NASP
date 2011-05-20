@@ -1,5 +1,5 @@
 /*
-* Funkcija vrsi dvostruku rotaciju ako postoji potreba, prvo lijevu na lijevom podstablu zatim desnu na korijenu
+* Perform double rotation, child to the left, root to the right
 */
 #include "header.h"
 node* doubleRotateLeftRight(node* subtree){

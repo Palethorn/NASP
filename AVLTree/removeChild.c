@@ -1,5 +1,8 @@
 /*
-* Funkcija uklanja element iz stabla cija pripadajuca vrijednost odgovara trazenoj.
+* Function removes node with a certain value
+* TODO:
+*	Use find function instead all this code here
+*	Check for balance factors and balance the tree if needed
 */
 #include "header.h"
 int removeChild(node **subtree, int value){

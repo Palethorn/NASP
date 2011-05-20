@@ -1,11 +1,14 @@
 /*
-* Funkcija pronalazi element sa minimalnom vrijednoscu unutar stabla.
+* Finds node with min value
 */
 #include "header.h"
 node* findMin(node *subtree){
 	if(subtree == NULL) return NULL;
-	if(subtree -> left == NULL){//No further.
+	if(subtree -> left == NULL){// No further.
 		return subtree;
 	}
-	return findMin(subtree -> left);//Trazimo element sa minimalnom vrijednoscu stoga se rekurzija krece do krajnjeg lijevog elementa stabla.
+	/*
+	* Going recursively to the leftmost node of the tree, because that one represents the max value
+	*/
+	return findMin(subtree -> left);
 }

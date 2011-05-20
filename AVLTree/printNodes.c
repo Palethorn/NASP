@@ -1,5 +1,5 @@
 /*
-* Funkcija ispisuje sve elemente stabla u in-order nacinu.
+* Printing nodes in-order with all the debug information
 */
 #include "header.h"
 void printNodes(node *subtree){
