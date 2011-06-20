@@ -1,3 +1,6 @@
+#
+#	Copyright (c) 2011 David Ćavar
+#
 #!/bin/bash
 touch makefile
 PARAMETERS="CC=gcc
