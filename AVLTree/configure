@@ -3,7 +3,7 @@
 #
 #!/bin/bash
 touch makefile
-PARAMETERS="CC=gcc
+PARAMETERS="CC=g++
 CFLAGS=-Wall -c"
 contents=""
 targetObjects=""

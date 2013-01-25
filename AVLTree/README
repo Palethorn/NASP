@@ -4,5 +4,3 @@ It's written in a way that its autobalance should have very little impact.
 Added script for creating makefile. Compile like this:
 ./configure
 make
-TODO
-Add self balancing while deleting elements
